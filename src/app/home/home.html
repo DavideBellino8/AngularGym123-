@@ -1,0 +1,35 @@
+
+<app-navbar></app-navbar>
+
+<div class="flex flex-wrap justify-center gap-8 mt-5">
+  @for (equipment of equipments(); track equipment) {
+  <div [routerLink]="[`/dettaglio/${equipment.id}`]">
+    <div class="max-w-sm rounded overflow-hidden shadow-lg">
+      <img
+        class="w-full"
+        src="{{equipment.image}}"
+        alt="Sunset in the mountains"
+      />
+      <div class="px-6 py-4">
+        <div class="font-bold text-xl mb-2">{{equipment.name}}</div>
+        <p class="text-gray-700 text-base">{{equipment.claim}}</p>
+      </div>
+      <div class="flex justify-center">
+        <button
+          (click)="onEquipmentBook(); $event.stopPropagation()"
+          class="bg-green-500 mb-4 hover:bg-green-700 text-white font-bold py-2 px-4 rounded"
+        >
+          Prenota corso
+        </button>
+      </div>
+    </div>
+    @if (isBooking) {
+    <app-booking-modal
+      (close)="onEquipmentBook()"
+      [equipment]="equipment"
+    ></app-booking-modal>
+    }
+  </div>
+
+  }
+</div>

@@ -1,0 +1,83 @@
+<div>
+  <div
+    class="relative z-10"
+    aria-labelledby="dialog-title"
+    role="dialog"
+    aria-modal="true"
+  >
+    <div
+      class="fixed inset-0 bg-[#c5c5c526] transition-opacity"
+      aria-hidden="true"
+    ></div>
+
+    <div class="fixed inset-0 z-10 w-screen overflow-y-auto">
+      <div
+        class="flex min-h-full items-end justify-center p-4 text-center sm:items-center sm:p-0"
+      >
+        <div
+          class="relative transform overflow-hidden rounded-lg bg-white text-left shadow-xl transition-all sm:my-8 sm:w-full sm:max-w-lg"
+        >
+          <div class="bg-white px-4 pt-5 pb-4 sm:p-6 sm:pb-4">
+            <div class="sm:flex sm:items-start">
+              <div class="mt-3 text-center sm:mt-0 sm:ml-4 sm:text-left">
+                <h3
+                  class="text-base font-semibold text-gray-900"
+                  id="dialog-title"
+                >
+                  {{equipment().name}}
+                </h3>
+                <div class="mt-2">
+                  <p class="text-sm text-gray-500 mb-4">
+                    Prenota il macchinario per il tempo che desideri
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="flex justify-center gap-4">
+              <button
+                (click)="onSubmitTime(5); $event.stopPropagation()"
+                class="border border-gray-300 rounded-2xl p-2 focus:outline-none focus:bg-blue-500"
+              >
+                5
+              </button>
+              <button
+                (click)="onSubmitTime(10) ; $event.stopPropagation()"
+                class="border border-gray-300 rounded-2xl p-2 focus:outline-none focus:bg-blue-500"
+              >
+                10
+              </button>
+              <button
+                (click)="onSubmitTime(15) ; $event.stopPropagation()"
+                class="border border-gray-300 rounded-2xl p-2 focus:outline-none focus:bg-blue-500"
+              >
+                15
+              </button>
+              <button
+                (click)="onSubmitTime(20) ; $event.stopPropagation()"
+                class="border border-gray-300 rounded-2xl p-2 focus:outline-none focus:bg-blue-500"
+              >
+                20
+              </button>
+            </div>
+          </div>
+          <div class="bg-gray-50 px-4 py-3 sm:flex sm:flex-row-reverse sm:px-6">
+            <button
+              (click)="onSubmitPrenotation() ; $event.stopPropagation()"
+              type="button"
+              class="inline-flex w-full justify-center rounded-md bg-green-600 px-3 py-2 text-sm font-semibold text-white shadow-xs hover:bg-green-500 sm:ml-3 sm:w-auto"
+            >
+              Prenota
+            </button>
+            <button
+              (click)="onCloseModal()"
+              type="button"
+              class="mt-3 inline-flex w-full justify-center rounded-md bg-white px-3 py-2 text-sm font-semibold text-gray-900 shadow-xs ring-1 ring-gray-300 ring-inset hover:bg-gray-50 sm:mt-0 sm:w-auto"
+            >
+              Cancel
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

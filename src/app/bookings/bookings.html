@@ -1,0 +1,10 @@
+<app-navbar></app-navbar>
+
+@for (session of machineName(); track $index) {
+<div class="flex">
+  <p class="mx-5">start date: {{session.start_date}}</p>
+  <p>end date: {{session.end_date}}</p>
+  <p class="mx-5">macchinario: {{session.machineName}}</p>
+</div>
+
+}
